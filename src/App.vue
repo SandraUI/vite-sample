@@ -1,6 +1,11 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
+import { ref } from 'vue'
+const num = ref(1)
+function countClick() {
+  num.value++
+}
 </script>
 
 <template>
@@ -9,12 +14,11 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      {{num}} <button type="button" v-on:click="countClick">CLICK ME</button>
     </div>
   </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+
 </template>
 
 <style scoped>
